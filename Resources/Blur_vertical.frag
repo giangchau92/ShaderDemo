@@ -2,7 +2,7 @@
 precision lowp float;
 #endif
 
-#define N 150
+#define N 126
 
 varying vec2 v_texCoord;
 

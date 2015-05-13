@@ -2,7 +2,7 @@
 precision lowp float;
 #endif
 
-#define N 3
+#define N 126
 varying vec2 v_texCoord;
 
 uniform vec2 u_resolution;
@@ -33,5 +33,4 @@ vec4 blur2(sampler2D t, vec2 p)
 void main()
 {
  	gl_FragColor = blur2(CC_Texture0, v_texCoord);
-    //gl_FragColor =  texture2D(CC_Texture0, v_texCoord);
 }

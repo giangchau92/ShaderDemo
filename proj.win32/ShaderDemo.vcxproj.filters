@@ -24,6 +24,7 @@
     <ClCompile Include="BlurNode.cpp" />
     <ClCompile Include="PostProcessingNode.cpp" />
     <ClCompile Include="BlurNode2Pass.cpp" />
+    <ClCompile Include="BlurNodeSampling.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -38,6 +39,7 @@
     <ClInclude Include="BlurNode.h" />
     <ClInclude Include="PostProcessingNode.h" />
     <ClInclude Include="BlurNode2Pass.h" />
+    <ClInclude Include="BlurNodeSampling.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc">

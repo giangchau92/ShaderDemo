@@ -16,18 +16,21 @@ bool BlurNode::init()
 {
 	if (!Node::init())
 		return false;
-	GLProgram* program = GLProgram::createWithFilenames("ccShader_blur.vert", "Blur.frag");
+	// read and add my shader
+	GLProgram* program = GLProgram::createWithFilenames("ccShader_blur.vert", "BlurNormal.frag");
 	if (!program)
 		return false;
 	setShaderProgram(program);
+	// get uniform variable location
 	_uSolutionLocation = program->getUniformLocation("u_resolution");
-
+	// load texture2D
 	_texture = TextureCache::getInstance()->addImage("cballs.png");
 	if (!_texture)
 		return false;
 	_texture->retain();
 	setContentSize(_texture->getContentSize());
 	Size size = getContentSize();
+	// init vertices array and texCoord array
 	_vertices.push_back(Point::ZERO);
 	_vertices.push_back(Point(size.width, 0));
 	_vertices.push_back(Point(0, size.height));
@@ -37,12 +40,15 @@ bool BlurNode::init()
 	_texCoord.push_back(Point(1, 1));
 	_texCoord.push_back(Point::ZERO);
 	_texCoord.push_back(Point(1, 0));
-		
+	
+	scheduleUpdate();
+
 	return true;
 }
 
 void BlurNode::draw( Renderer *renderer, const Mat4& transform, uint32_t flags )
 {
+	// custom drawing
 	_customComand.init(_globalZOrder);
 	_customComand.func = [&]()->void {
 		CC_NODE_DRAW_SETUP();
@@ -73,4 +79,9 @@ BlurNode* BlurNode::create()
 		result = nullptr;
 	}
 	return result;
+}
+
+void BlurNode::update( float delta )
+{
+	CCLOG("Time: %f", delta);
 }

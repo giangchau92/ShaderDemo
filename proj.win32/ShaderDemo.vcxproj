@@ -142,6 +142,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /E /I /F /Y</Command>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="BlurNode2Pass.cpp" />
+    <ClCompile Include="BlurNodeSampling.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="BlurNode.cpp" />
     <ClCompile Include="PostProcessingNode.cpp" />
@@ -150,6 +151,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /E /I /F /Y</Command>
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="BlurNode2Pass.h" />
+    <ClInclude Include="BlurNodeSampling.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="BlurNode.h" />
     <ClInclude Include="PostProcessingNode.h" />

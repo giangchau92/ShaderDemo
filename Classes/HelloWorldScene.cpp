@@ -2,6 +2,7 @@
 #include "proj.win32\BlurNode.h"
 #include "proj.win32\PostProcessingNode.h"
 #include "proj.win32\BlurNode2Pass.h"
+#include "proj.win32\BlurNodeSampling.h"
 
 USING_NS_CC;
 
@@ -30,7 +31,7 @@ bool HelloWorld::init()
         return false;
     }
 	Size winSize = Director::getInstance()->getWinSize();
-	BlurNode* node = BlurNode::create();
+	BlurNodeSampling* node = BlurNodeSampling::create();
 	node->setAnchorPoint(Point(0.5f, 0.5f));
 	node->setPosition(winSize.width / 2, winSize.height / 2);
 	addChild(node);

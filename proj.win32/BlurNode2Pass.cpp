@@ -85,6 +85,7 @@ BlurNode2Pass* BlurNode2Pass::create()
 
 void BlurNode2Pass::update( float delta )
 {
+	CCLOG("Time: %f", delta);
 	_textureRender->beginWithClear(1, 0, 0, 1);
 	_customCommandH.init(_globalZOrder);
 	_customCommandH.func = [=]()->void {

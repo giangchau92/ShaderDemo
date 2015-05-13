@@ -7,3 +7,5 @@ proj.linux/
 proj.ios_mac/
 proj.android/
 Resources/pig.jpg
+*.sdf
+proj.win32/ShaderDemo.opensdf
